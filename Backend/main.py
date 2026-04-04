@@ -317,3 +317,10 @@ def get_prediction(db: Session = Depends(get_db), current_user: models.User = De
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message": "Backend is working 🚀"}
